@@ -666,6 +666,17 @@ export function generateBlockId(): string {
 }
 
 /**
+ * Create a section id
+ *
+ * @returns {string}
+ */
+export function generateSectionId(): string {
+  const idLen = 10;
+
+  return nanoid(idLen);
+}
+
+/**
  * Opens new Tab with passed URL
  *
  * @param {string} url - URL address to redirect

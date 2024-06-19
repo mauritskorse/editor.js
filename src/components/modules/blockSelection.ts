@@ -15,7 +15,10 @@ import { SanitizerConfig } from '../../../types/configs';
 import { clean } from '../utils/sanitizer';
 
 /**
- *
+ * TODO: implement sections for selection:
+ * - use sectionManager
+ * - first CTRL+A selects all blocks within current section
+ * - second CTRL+A selects all sections
  */
 export default class BlockSelection extends Module {
   /**

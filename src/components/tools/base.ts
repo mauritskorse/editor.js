@@ -3,6 +3,7 @@ import { SanitizerConfig } from '../../../types';
 import * as _ from '../utils';
 import type InlineTool from './inline';
 import type BlockTool from './block';
+import type SectionTool from './section';
 import type BlockTune from './tune';
 import API from '../modules/api';
 
@@ -14,6 +15,12 @@ export enum ToolType {
    * Block tool
    */
   Block,
+
+  /**
+   * Section tool
+   */
+  Section,
+
   /**
    * Inline tool
    */
@@ -45,6 +52,10 @@ export enum UserSettings {
    * Enabled Block Tunes for Block Tool
    */
   EnabledBlockTunes = 'tunes',
+  /**
+   * Enabled Tunes for Section Tool
+   */
+  EnabledSectionTunes = 'tunes',
   /**
    * Tool configuration
    */
@@ -88,6 +99,36 @@ export enum InternalBlockToolSettings {
   IsReadOnlySupported = 'isReadOnlySupported',
   /**
    * Tool paste config
+   */
+  PasteConfig = 'pasteConfig'
+}
+
+/**
+ * Enum of Tool options provided by Section Tool
+ */
+export enum InternalSectionToolSettings {
+  /**
+   * Is line breaks enabled for Tool
+   *
+   * @deprecated not necessary in Section Tool
+   */
+  IsEnabledLineBreaks = 'enableLineBreaks',
+  /**
+   * Tool Toolbox config
+   */
+  Toolbox = 'toolbox',
+  /**
+   * Tool conversion config
+   */
+  ConversionConfig = 'conversionConfig',
+  /**
+   * Is readonly mode supported for Tool
+   */
+  IsReadOnlySupported = 'isReadOnlySupported',
+  /**
+   * Tool paste config
+   *
+   * @deprecated not necessary in Section Tool
    */
   PasteConfig = 'pasteConfig'
 }
@@ -257,6 +298,13 @@ export default abstract class BaseTool<Type extends Tool = Tool> {
    */
   public isBlock(): this is BlockTool {
     return this.type === ToolType.Block;
+  }
+
+  /**
+   * Returns true if Tools is section
+   */
+  public isSection(): this is SectionTool {
+    return this.type === ToolType.Section;
   }
 
   /**

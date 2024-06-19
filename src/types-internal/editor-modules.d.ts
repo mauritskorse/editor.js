@@ -10,6 +10,7 @@ import NotifierAPI from '../components/modules/api/notifier';
 import ReadOnlyAPI from '../components/modules/api/readonly';
 import SanitizerAPI from '../components/modules/api/sanitizer';
 import SaverAPI from '../components/modules/api/saver';
+import SectionsAPI from '../components/modules/api/sections';
 import SelectionAPI from '../components/modules/api/selection';
 import StylesAPI from '../components/modules/api/styles';
 import ToolbarAPI from '../components/modules/api/toolbar';
@@ -25,6 +26,7 @@ import InlineToolbar from '../components/modules/toolbar/inline';
 /** . */
 import BlockEvents from '../components/modules/blockEvents';
 import BlockManager from '../components/modules/blockManager';
+import SectionManager from '../components/modules/sectionManager';
 import BlockSelection from '../components/modules/blockSelection';
 import Caret from '../components/modules/caret';
 import CrossBlockSelection from '../components/modules/crossBlockSelection';
@@ -51,6 +53,7 @@ export interface EditorModules {
   ReadOnlyAPI: ReadOnlyAPI,
   SanitizerAPI: SanitizerAPI,
   SaverAPI: SaverAPI,
+  SectionsAPI: SectionsAPI,
   SelectionAPI: SelectionAPI,
   StylesAPI: StylesAPI,
   ToolbarAPI: ToolbarAPI,
@@ -66,6 +69,7 @@ export interface EditorModules {
   // Modules
   BlockEvents: BlockEvents,
   BlockManager: BlockManager,
+  SectionManager: SectionManager,
   BlockSelection: BlockSelection,
   Caret: Caret,
   CrossBlockSelection: CrossBlockSelection,

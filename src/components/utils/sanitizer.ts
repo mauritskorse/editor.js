@@ -58,6 +58,31 @@ export function sanitizeBlocks(
   });
 }
 /**
+ * Sanitize Sections
+ *
+ * Enumerate sections and clean data
+ *
+ * @param sectionsData - sections' data to sanitize
+ * @param sanitizeConfig — sanitize config to use or function to get config for Tool
+ */
+export function sanitizeSections(
+  sectionsData: Array<Pick<SavedData, 'data' | 'tool'>>,
+  sanitizeConfig: SanitizerConfig | ((toolName: string) => SanitizerConfig)
+): Array<Pick<SavedData, 'data' | 'tool'>> {
+  return sectionsData.map((section) => {
+    const toolConfig = _.isFunction(sanitizeConfig) ? sanitizeConfig(section.tool) : sanitizeConfig;
+
+    if (_.isEmpty(toolConfig)) {
+      return section;
+    }
+
+    section.data = deepSanitize(section.data, toolConfig) as BlockToolData;
+
+    return section;
+  });
+}
+
+/**
  * Cleans string from unwanted tags
  * Method allows to use default config
  *

@@ -10,6 +10,7 @@ import NotifierAPI from './api/notifier';
 import ReadOnlyAPI from './api/readonly';
 import SanitizerAPI from './api/sanitizer';
 import SaverAPI from './api/saver';
+import SectionsAPI from './api/sections';
 import SelectionAPI from './api/selection';
 import StylesAPI from './api/styles';
 import ToolbarAPI from './api/toolbar';
@@ -24,7 +25,9 @@ import InlineToolbar from './toolbar/inline';
 
 /** . */
 import BlockEvents from './blockEvents';
+import SectionEvents from './sectionEvents';
 import BlockManager from './blockManager';
+import SectionManager from './sectionManager';
 import BlockSelection from './blockSelection';
 import Caret from './caret';
 import CrossBlockSelection from './crossBlockSelection';
@@ -51,6 +54,7 @@ export default {
   ReadOnlyAPI,
   SanitizerAPI,
   SaverAPI,
+  SectionsAPI,
   SelectionAPI,
   StylesAPI,
   ToolbarAPI,
@@ -65,7 +69,9 @@ export default {
 
   // Modules
   BlockEvents,
+  SectionEvents,
   BlockManager,
+  SectionManager,
   BlockSelection,
   Caret,
   CrossBlockSelection,

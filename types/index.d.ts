@@ -22,6 +22,7 @@ import {
   ReadOnly,
   Sanitizer,
   Saver,
+  Sections,
   Selection,
   Styles,
   Toolbar,
@@ -60,12 +61,17 @@ export {
   PasteEventDetail,
   PatternPasteEvent,
   PatternPasteEventDetail,
+  SectionToolConstructable,
+  SectionToolConstructorOptions,
+  SectionTool,
+  SectionToolData,
   HTMLPasteEvent,
   HTMLPasteEventDetail,
   FilePasteEvent,
   FilePasteEventDetail,
 } from './tools';
 export {BlockTune, BlockTuneConstructable} from './block-tunes';
+export {SectionTune, SectionTuneConstructable} from './section-tunes';
 export {
   EditorConfig,
   SanitizerConfig,
@@ -86,9 +92,10 @@ export {
   PopoverItemWithoutConfirmationParams
 } from '../src/components/utils/popover';
 
-export { OutputData, OutputBlockData} from './data-formats/output-data';
+export { OutputData, OutputBlockData, OutputSectionData} from './data-formats/output-data';
 export { BlockId } from './data-formats/block-id';
-export { BlockAPI } from './api'
+export { SectionId } from './data-formats/section-id';
+export { BlockAPI, SectionAPI } from './api'
 export {
   BlockMutationType,
   BlockMutationEvent,
@@ -115,6 +122,7 @@ export interface API {
   notifier: Notifier;
   sanitizer: Sanitizer;
   saver: Saver;
+  sections: Sections;
   selection: Selection;
   styles: Styles;
   toolbar: Toolbar;
@@ -137,6 +145,7 @@ declare class EditorJS {
   public caret: Caret;
   public sanitizer: Sanitizer;
   public saver: Saver;
+  public sections: Sections;
   public selection: Selection;
   public styles: Styles;
   public toolbar: Toolbar;

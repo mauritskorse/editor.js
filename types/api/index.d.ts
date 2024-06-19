@@ -3,6 +3,8 @@ export * from './events';
 export * from './listeners';
 export * from './sanitizer';
 export * from './saver';
+export * from './sections';
+export * from './section';
 export * from './selection';
 export * from './styles';
 export * from './caret';

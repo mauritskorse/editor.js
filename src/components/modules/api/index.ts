@@ -25,6 +25,7 @@ export default class API extends Module {
       notifier: this.Editor.NotifierAPI.methods,
       sanitizer: this.Editor.SanitizerAPI.methods,
       saver: this.Editor.SaverAPI.methods,
+      sections: this.Editor.SectionsAPI.methods,
       selection: this.Editor.SelectionAPI.methods,
       styles: this.Editor.StylesAPI.classes,
       toolbar: this.Editor.ToolbarAPI.methods,

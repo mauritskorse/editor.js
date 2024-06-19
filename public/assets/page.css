@@ -1,0 +1,42 @@
+.grid-editor-wrapper{
+    position:relative
+}
+
+.editor_grid:not(.-active) {
+    opacity: 0;
+}
+.editor_grid {
+    display: flex;
+    justify-content: center;
+    min-width: 1200px;
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    transition: opacity var(--transition-duration);
+    width: 100%;
+    
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.editor_grid .grid {
+    height: 100%;
+}
+.grid {
+    display: grid;
+    grid-gap: 48px;
+    gap: 48px;
+    grid-template-columns: repeat(12, 1fr);
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    width: 100%;
+}
+.editor_grid .grid_area {
+    background-color: hsla(0, 0%, 73%, .1);
+}
